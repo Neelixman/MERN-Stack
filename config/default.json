@@ -1,0 +1,7 @@
+{
+  "mongoURI": "mongodb+srv://Neelix:efingspecs32x@neelix.fwqy3.mongodb.net/Neelix?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "5c1b25049e9b5a21db13",
+  "githubSecret": "3b06fe1c2994ee1a3021dba78be625299f2f8cc9",
+  "githubToken": "c474414081906aab3ba8880950a3dee815154dc1"
+}
