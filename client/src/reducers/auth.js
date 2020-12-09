@@ -1,10 +1,10 @@
-import { REGISTER_SUCCESS, REGISTER_FAIL, USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from "../actions/types";
+import { REGISTER_SUCCESS, REGISTER_FAIL, USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, ACCOUNT_DELETED } from "../actions/types";
 
 const initialState = {
   token: localStorage.getItem("token"),
   isAuthenticated: null,
   loading: true,
-  user: null,
+  user: null
 };
 // eslint-disable-next-line
 export default function (state = initialState, action) {
@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
         ...state,
         isAuthenticated: true,
         loading: false,
-        user: payload,
+        user: payload
       };
     case AUTH_ERROR:
       localStorage.removeItem("token");
@@ -33,6 +33,9 @@ export default function (state = initialState, action) {
       localStorage.removeItem("token");
       return { ...state, token: null, isAuthenticated: false, loading: false };
     case LOGOUT:
+      localStorage.removeItem("token");
+      return { ...state, token: null, isAuthenticated: false, loading: false };
+    case ACCOUNT_DELETED:
       localStorage.removeItem("token");
       return { ...state, token: null, isAuthenticated: false, loading: false };
     default:
